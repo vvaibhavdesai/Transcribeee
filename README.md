@@ -130,4 +130,4 @@ MIT
 
 ---
 
-**Built by [Your Name]** — [your-email] · [linkedin] · [github]
+**Built by [Vaibhav Desai]** — [desai.vaibhav.dx@gmail.com] 
