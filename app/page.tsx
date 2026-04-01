@@ -711,13 +711,6 @@ ${text.slice(0, 12000)}`;
         {/* Footer */}
         <div style={{ textAlign: "center", marginTop: 36, paddingTop: 20, borderTop: `1px solid ${c.cardBorder}` }}>
           <div style={{ fontSize: 11, color: c.textFaint }}>TranscribeIQ — Built with Cohere Transcribe & Command A</div>
-          <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 6, fontSize: 10, color: c.textFaint, fontFamily: "monospace" }}>
-            <span>cohere-transcribe-03-2026</span>
-            <span>·</span>
-            <span>command-a-03-2025</span>
-            <span>·</span>
-            <span>14 languages</span>
-          </div>
         </div>
       </div>
     </div>
