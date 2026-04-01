@@ -10,14 +10,6 @@ TranscribeIQ is a full-stack audio analysis app that combines [Cohere Transcribe
 
 ---
 
-## Why This Exists
-
-Cohere Transcribe is a 2B-parameter ASR model that ranks **#1 on HuggingFace's Open ASR Leaderboard** with a 5.42% WER beating Whisper, ElevenLabs Scribe, IBM Granite, and Qwen ASR. It supports 14 languages and processes 525 minutes of audio per minute.
-
-TranscribeIQ is one of the first apps built on this model, combining it with Command A's reasoning capabilities to go beyond raw transcription into genuine audio intelligence.
-
----
-
 ## Features
 
 - **Drag-and-drop audio upload** — supports `.flac`, `.mp3`, `.mpeg`, `.mpga`, `.ogg`, `.wav`
@@ -131,29 +123,6 @@ transcribe-iq/
 
 ---
 
-## Deploy to Vercel
-
-```bash
-npm i -g vercel
-vercel deploy
-```
-
-Or connect the GitHub repo to [vercel.com](https://vercel.com) for auto-deploys on push.
-
----
-
-## Why Cohere?
-
-I chose Cohere's stack specifically because:
-
-- **Transcribe is best-in-class** — #1 on the Open ASR Leaderboard, open-weights, production-efficient (3x faster RTFx than comparable models)
-- **Command A is built for tool use and structured output** — `response_format: { type: "json_object" }` makes extraction pipelines trivial
-- **Multilingual by default** — 14 languages on Transcribe, 23 on Command A, no separate models needed
-- **Enterprise-ready** — Model Vault for private inference, SOC 2 compliant, on-prem deployment options
-
-This isn't just "LLM wrapper" — it's a pipeline that exercises two differentiated Cohere products working together.
-
----
 
 ## License
 
