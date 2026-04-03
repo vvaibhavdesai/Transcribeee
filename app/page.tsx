@@ -470,7 +470,7 @@ ${text.slice(0, 12000)}`;
                         boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
                         lineHeight: 1.5,
                       }}>
-                        We don&apos;t store your API key, it&apos;s used directly<br />to call the Cohere API endpoint.
+                        We don&apos;t store your API key, it&apos;s used directly<br />to call the Cohere API endpoint. You can clone the project and run it locally for full control. Get your API key from the Cohere dashboard.
                       </div>
                     )}
                   </div>
