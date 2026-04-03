@@ -247,6 +247,7 @@ export default function TranscribeIQ() {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("transcript");
   const [copied, setCopied] = useState("");
+  const [showTooltip, setShowTooltip] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -440,7 +441,40 @@ ${text.slice(0, 12000)}`;
             </div>
             <div style={{ padding: 20 }}>
               <div style={{ marginBottom: 16 }}>
-                <label style={label}>API Key</label>
+                <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 6 }}>
+                  <label style={{ ...label, marginBottom: 0 }}>API Key</label>
+                  <div
+                    style={{ position: "relative", display: "inline-flex" }}
+                    onMouseEnter={() => setShowTooltip(true)}
+                    onMouseLeave={() => setShowTooltip(false)}
+                  >
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style={{ color: c.textDim, cursor: "default", flexShrink: 0 }}>
+                      <circle cx="8" cy="8" r="7.5" stroke="currentColor" strokeWidth="1"/>
+                      <text x="8" y="12" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="700" fontFamily="sans-serif">i</text>
+                    </svg>
+                    {showTooltip && (
+                      <div style={{
+                        position: "absolute",
+                        bottom: "calc(100% + 8px)",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        background: "rgba(22,22,40,0.97)",
+                        border: `1px solid rgba(255,255,255,0.12)`,
+                        borderRadius: 8,
+                        padding: "8px 12px",
+                        fontSize: 12,
+                        color: c.textMuted,
+                        whiteSpace: "nowrap",
+                        pointerEvents: "none",
+                        zIndex: 100,
+                        boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+                        lineHeight: 1.5,
+                      }}>
+                        We don&apos;t store your API key, it&apos;s used directly<br />to call the Cohere API endpoint.
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <div style={{ position: "relative" }}>
                   <input style={input} type={showKey ? "text" : "password"} placeholder="Paste your Cohere API key" value={apiKey} onChange={e => setApiKey(e.target.value)} />
                   <button onClick={() => setShowKey(!showKey)} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: "none", border: "none", color: c.textDim, cursor: "pointer", fontSize: 11, fontWeight: 600 }}>
